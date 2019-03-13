@@ -1,4 +1,4 @@
-const { spacing } = require('pangu')
+const pangu = require('pangu')
 const { escapeHtml, isWhiteSpace } = require('markdown-it/lib/common/utils')
 
 function getPrevChar (tokens, index) {
@@ -19,7 +19,7 @@ module.exports = (md, options = {}) => {
 
   md.renderer.rules.text = (tokens, index, options, env, self) => {
     const prevChar = getPrevChar(tokens, index)
-    return escapeHtml(spacing(prevChar + tokens[index].content).slice(prevChar.length))
+    return escapeHtml(pangu.spacing(prevChar + tokens[index].content).slice(prevChar.length))
   }
 
   additionalRules.forEach((type) => {

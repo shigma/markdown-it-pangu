@@ -15,7 +15,7 @@ module.exports = ({ isProd }) => ({
   themeConfig: {
     repo: `Shigma/${name}`,
     editLinks: true,
-    docsDir: 'src/docs',
+    docsDir: 'docs',
     sidebar: [
       '/',
       '/vuepress.html'
